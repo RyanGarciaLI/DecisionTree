@@ -4,7 +4,7 @@ import csv
 
 DATA_PATH = os.path.join('rawData', 'adult.data')
 TEST_PATH = os.path.join('rawData', 'adult.test')
-HEADERS = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status',
+HEADERS = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation',
     'relationship', 'race', 'sex', 'capital-gain', 'captial-loss', 'hours-per-week']
 ORDINAL = 'ordinal'
 NOMINAL = 'normial'
@@ -15,6 +15,7 @@ ATTRI_TYPE = {
     'education' : NOMINAL, 
     'education-num' : ORDINAL,
     'marital-status' : NOMINAL, 
+    'occupation': NOMINAL,
     'relationship' : NOMINAL,
     'race' : NOMINAL,
     'sex' : NOMINAL,
@@ -39,7 +40,7 @@ def read_test_data():
     attributes
         a list of lists of attributes without missing data.
     labels
-        a list of labels.
+        a list of labels. e.g., 0 for <= 50K, 1 for >50K
     headers
         a list of attributes' names.
     types
@@ -63,8 +64,15 @@ def read_test_data():
                 # omit missing data
                 continue
 
-            # remove dot sign from label
-            label = line[-1][:-1]
+            # convert numeric data in str to integer 
+            for i in range(len(HEADERS)):
+                if ATTRI_TYPE[HEADERS[i]] == ORDINAL:
+                    line[i] = int(line[i])
+                else:
+                    line[i] = line[i].strip()
+
+            # remove dot sign from label and represent it in 1 or 0
+            label = 0 if line[-1][:-1] == "<=50K" else 1
             labels.append(label)
             # remove 'native-country' attributes
             attributes.append(line[:-2])
@@ -83,7 +91,7 @@ def read_training_data():
     attributes
         a list of lists of attributes without missing data.
     labels
-        a list of labels.
+        a list of labels. e.g., 0 for <= 50K, 1 for >50K
     headers
         a list of attributes' names.
     types
@@ -103,7 +111,16 @@ def read_training_data():
                 # omit missing data
                 continue
 
-            labels.append(line[-1])
+            # convert numeric data in str to integer 
+            for i in range(len(HEADERS)):
+                if ATTRI_TYPE[HEADERS[i]] == ORDINAL:
+                    line[i] = int(line[i])
+                else:
+                    line[i] = line[i].strip()
+
+            # represent label in terms of 1 or 0
+            label = 0 if line[-1] == "<=50K" else 1
+            labels.append(label)
             # remove 'native-country' attributes
             attributes.append(line[:-2])
 
