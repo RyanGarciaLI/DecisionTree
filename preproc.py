@@ -72,7 +72,7 @@ def read_test_data():
                     line[i] = line[i].strip()
 
             # remove dot sign from label and represent it in 1 or 0
-            label = 0 if line[-1][:-1] == "<=50K" else 1
+            label = 0 if line[-1][:-1] == " <=50K" else 1
             labels.append(label)
             # remove 'native-country' attributes
             attributes.append(line[:-2])
@@ -119,7 +119,7 @@ def read_training_data():
                     line[i] = line[i].strip()
 
             # represent label in terms of 1 or 0
-            label = 0 if line[-1] == "<=50K" else 1
+            label = 0 if line[-1] == " <=50K" else 1
             labels.append(label)
             # remove 'native-country' attributes
             attributes.append(line[:-2])
