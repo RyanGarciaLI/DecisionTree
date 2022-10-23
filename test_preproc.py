@@ -1,6 +1,6 @@
 import preproc
 
-attributes, labels, headers, types = preproc.read_training_data()
+attributes, labels, headers, types = preproc.read_test_data()
 print(headers)
 print(types)
 for i in range(0, len(attributes)):

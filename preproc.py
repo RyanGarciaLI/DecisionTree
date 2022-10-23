@@ -7,22 +7,23 @@ TEST_PATH = os.path.join('rawData', 'adult.test')
 HEADERS = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation',
     'relationship', 'race', 'sex', 'capital-gain', 'captial-loss', 'hours-per-week']
 ORDINAL = 'ordinal'
-NOMINAL = 'normial'
-ATTRI_TYPE = {
-    'age': ORDINAL,
-    'workclass' : NOMINAL,
-    'fnlwgt' : ORDINAL,
-    'education' : NOMINAL, 
-    'education-num' : ORDINAL,
-    'marital-status' : NOMINAL, 
-    'occupation': NOMINAL,
-    'relationship' : NOMINAL,
-    'race' : NOMINAL,
-    'sex' : NOMINAL,
-    'capital-gain' : ORDINAL,
-    'captial-loss' : ORDINAL,
-    'hours-per-week' : ORDINAL,
-}
+NOMINAL = 'nominal'
+ATTRI_TYPE = [ORDINAL, NOMINAL, ORDINAL, NOMINAL, ORDINAL, NOMINAL,  NOMINAL, NOMINAL, NOMINAL, NOMINAL, ORDINAL, ORDINAL, ORDINAL]
+# ATTRI_TYPE = {
+#     'age': ORDINAL,
+#     'workclass' : NOMINAL,
+#     'fnlwgt' : ORDINAL,
+#     'education' : NOMINAL, 
+#     'education-num' : ORDINAL,
+#     'marital-status' : NOMINAL, 
+#     'occupation': NOMINAL,
+#     'relationship' : NOMINAL,
+#     'race' : NOMINAL,
+#     'sex' : NOMINAL,
+#     'capital-gain' : ORDINAL,
+#     'captial-loss' : ORDINAL,
+#     'hours-per-week' : ORDINAL,
+# }
 
 # prevent exceeding field limits.
 csv.field_size_limit(sys.maxsize)
@@ -44,7 +45,7 @@ def read_test_data():
     headers
         a list of attributes' names.
     types
-        a list of attribute types, i.e., ordinal or nomial.
+        a list of attribute types, i.e., ordinal or nominal.
     """
 
     attributes = []
@@ -66,7 +67,8 @@ def read_test_data():
 
             # convert numeric data in str to integer 
             for i in range(len(HEADERS)):
-                if ATTRI_TYPE[HEADERS[i]] == ORDINAL:
+                # if ATTRI_TYPE[HEADERS[i]] == ORDINAL:
+                if ATTRI_TYPE[i] == ORDINAL:
                     line[i] = int(line[i])
                 else:
                     line[i] = line[i].strip()
@@ -95,7 +97,7 @@ def read_training_data():
     headers
         a list of attributes' names.
     types
-        a list of attribute types, i.e., ordinal or nomial.
+        a list of attribute types, i.e., ordinal or nominal.
     """
     attributes = []
     labels = []
@@ -113,7 +115,8 @@ def read_training_data():
 
             # convert numeric data in str to integer 
             for i in range(len(HEADERS)):
-                if ATTRI_TYPE[HEADERS[i]] == ORDINAL:
+                # if ATTRI_TYPE[HEADERS[i]] == ORDINAL:
+                if ATTRI_TYPE[i] == ORDINAL:
                     line[i] = int(line[i])
                 else:
                     line[i] = line[i].strip()
