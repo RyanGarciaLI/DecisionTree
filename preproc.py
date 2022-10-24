@@ -1,9 +1,7 @@
-import os
 import sys
 import csv
 
-DATA_PATH = os.path.join('rawData', 'adult.data')
-TEST_PATH = os.path.join('rawData', 'adult.test')
+
 HEADERS = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation',
     'relationship', 'race', 'sex', 'capital-gain', 'captial-loss', 'hours-per-week']
 ORDINAL = 'ordinal'
@@ -29,12 +27,17 @@ ATTRI_TYPE = [ORDINAL, NOMINAL, ORDINAL, NOMINAL, ORDINAL, NOMINAL,  NOMINAL, NO
 csv.field_size_limit(sys.maxsize)
 
 
-def read_test_data():
+def read_test_data(testDataPath):
     """Reads test data from .data file.
 
     Reads the data record line by line and removes the non-data record and the
     record that contains missing data (i.e., ' ?'). Trims labels by eliminating
     the dot sign '.' at the end.
+
+    Parameters
+    ----------
+    dataFilePath:
+        test data set file path related to the project root in string.
 
     Returns
     -------
@@ -50,7 +53,7 @@ def read_test_data():
 
     attributes = []
     labels = []
-    with open(TEST_PATH, newline='') as datafile:
+    with open(testDataPath, newline='') as datafile:
         dataReader = csv.reader(datafile)
         
         # remove first line in test file
@@ -82,11 +85,16 @@ def read_test_data():
     return attributes, labels, HEADERS, ATTRI_TYPE
 
 
-def read_training_data():
+def read_training_data(dataFilePath):
     """Reads training data from .data file.
 
     Reads the data record line by line and removes the non-data record and the
     record that contains missing data (i.e., ' ?'). 
+
+    Parameters
+    ----------
+    dataFilePath:
+        test data set file path related to the project root in string.
 
     Returns
     -------
@@ -101,7 +109,7 @@ def read_training_data():
     """
     attributes = []
     labels = []
-    with open(DATA_PATH, newline='') as datafile:
+    with open(dataFilePath, newline='') as datafile:
         dataReader = csv.reader(datafile)
 
         for line in dataReader:
