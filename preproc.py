@@ -1,43 +1,29 @@
 import sys
 import csv
 
-
 HEADERS = ['age', 'workclass', 'fnlwgt', 'education', 'education-num', 'marital-status', 'occupation',
     'relationship', 'race', 'sex', 'capital-gain', 'captial-loss', 'hours-per-week']
 ORDINAL = 'ordinal'
 NOMINAL = 'nominal'
-ATTRI_TYPE = [ORDINAL, NOMINAL, ORDINAL, NOMINAL, ORDINAL, NOMINAL,  NOMINAL, NOMINAL, NOMINAL, NOMINAL, ORDINAL, ORDINAL, ORDINAL]
-# ATTRI_TYPE = {
-#     'age': ORDINAL,
-#     'workclass' : NOMINAL,
-#     'fnlwgt' : ORDINAL,
-#     'education' : NOMINAL, 
-#     'education-num' : ORDINAL,
-#     'marital-status' : NOMINAL, 
-#     'occupation': NOMINAL,
-#     'relationship' : NOMINAL,
-#     'race' : NOMINAL,
-#     'sex' : NOMINAL,
-#     'capital-gain' : ORDINAL,
-#     'captial-loss' : ORDINAL,
-#     'hours-per-week' : ORDINAL,
-# }
+ATTRI_TYPE = [ORDINAL, NOMINAL, ORDINAL, NOMINAL, ORDINAL, NOMINAL, NOMINAL,
+    NOMINAL, NOMINAL, NOMINAL, ORDINAL, ORDINAL, ORDINAL]
+
+MAX_INTEGER = 2147483647
 
 # prevent exceeding field limits.
-csv.field_size_limit(sys.maxsize)
+csv.field_size_limit(MAX_INTEGER)
 
 
-def read_test_data(testDataPath):
+def read_test_data(path_test):
     """Reads test data from .data file.
-
     Reads the data record line by line and removes the non-data record and the
     record that contains missing data (i.e., ' ?'). Trims labels by eliminating
     the dot sign '.' at the end.
 
     Parameters
     ----------
-    dataFilePath:
-        test data set file path related to the project root in string.
+    path_test
+        path to test data with the same structure as adult.test
 
     Returns
     -------
@@ -48,12 +34,12 @@ def read_test_data(testDataPath):
     headers
         a list of attributes' names.
     types
-        a list of attribute types, i.e., ordinal or nominal.
+        a list of attribute types, i.e., ordinal or nomial.
     """
 
     attributes = []
     labels = []
-    with open(testDataPath, newline='') as datafile:
+    with open(path_test, newline='') as datafile:
         dataReader = csv.reader(datafile)
         
         # remove first line in test file
@@ -70,7 +56,6 @@ def read_test_data(testDataPath):
 
             # convert numeric data in str to integer 
             for i in range(len(HEADERS)):
-                # if ATTRI_TYPE[HEADERS[i]] == ORDINAL:
                 if ATTRI_TYPE[i] == ORDINAL:
                     line[i] = int(line[i])
                 else:
@@ -85,17 +70,16 @@ def read_test_data(testDataPath):
     return attributes, labels, HEADERS, ATTRI_TYPE
 
 
-def read_training_data(dataFilePath):
+def read_training_data(path_train):
     """Reads training data from .data file.
-
     Reads the data record line by line and removes the non-data record and the
     record that contains missing data (i.e., ' ?'). 
-
+    
     Parameters
     ----------
-    dataFilePath:
-        test data set file path related to the project root in string.
-
+    path_train
+        path to training data with the same structure as adult.data
+    
     Returns
     -------
     attributes
@@ -105,11 +89,11 @@ def read_training_data(dataFilePath):
     headers
         a list of attributes' names.
     types
-        a list of attribute types, i.e., ordinal or nominal.
+        a list of attribute types, i.e., ordinal or nomial.
     """
     attributes = []
     labels = []
-    with open(dataFilePath, newline='') as datafile:
+    with open(path_train, newline='') as datafile:
         dataReader = csv.reader(datafile)
 
         for line in dataReader:
@@ -123,7 +107,6 @@ def read_training_data(dataFilePath):
 
             # convert numeric data in str to integer 
             for i in range(len(HEADERS)):
-                # if ATTRI_TYPE[HEADERS[i]] == ORDINAL:
                 if ATTRI_TYPE[i] == ORDINAL:
                     line[i] = int(line[i])
                 else:
@@ -136,4 +119,5 @@ def read_training_data(dataFilePath):
             attributes.append(line[:-2])
 
     return attributes, labels, HEADERS, ATTRI_TYPE
-    
+
+
