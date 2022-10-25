@@ -1,8 +1,8 @@
-[split_attribute = relationship; predicate = (Wife, Husband)] 
+[split_attribute = relationship; predicate = (Husband, Wife)] 
 	[split_attribute = education; predicate = (Masters, Doctorate, Prof-school, Bachelors)] 
 	|	[split_attribute = capital-gain; predicate = 5013] 
 	|	|	[split_attribute = captial-loss; predicate = 1740] 
-	|	|	|	[split_attribute = occupation; predicate = (Sales, Exec-managerial, Tech-support, Protective-serv, Prof-specialty)] 
+	|	|	|	[split_attribute = occupation; predicate = (Exec-managerial, Tech-support, Sales, Prof-specialty, Protective-serv)] 
 	|	|	|	|	[split_attribute = age; predicate = 28] 
 	|	|	|	|	|	[split_attribute = age; predicate = 25] 
 	|	|	|	|	|	|	(label: 0) 
@@ -16,16 +16,16 @@
 	|	|	|	|	|	[split_attribute = hours-per-week; predicate = 30] 
 	|	|	|	|	|		[split_attribute = relationship; predicate = (Wife)] 
 	|	|	|	|	|		|	(label: 1) 
-	|	|	|	|	|		|	[split_attribute = education; predicate = (Masters, Bachelors)] 
-	|	|	|	|	|		|		[split_attribute = workclass; predicate = (Self-emp-inc, Federal-gov, State-gov)] 
-	|	|	|	|	|		|		|	(label: 0) 
-	|	|	|	|	|		|		|	[split_attribute = occupation; predicate = (Tech-support)] 
-	|	|	|	|	|		|		|		(label: 1) 
-	|	|	|	|	|		|		|		(label: 0) 
+	|	|	|	|	|		|	[split_attribute = education; predicate = (Prof-school, Doctorate)] 
 	|	|	|	|	|		|		(label: 1) 
+	|	|	|	|	|		|		[split_attribute = workclass; predicate = (Self-emp-inc, Federal-gov, State-gov)] 
+	|	|	|	|	|		|			(label: 0) 
+	|	|	|	|	|		|			[split_attribute = occupation; predicate = (Tech-support)] 
+	|	|	|	|	|		|				(label: 1) 
+	|	|	|	|	|		|				(label: 0) 
 	|	|	|	|	|		[split_attribute = capital-gain; predicate = 3103] 
 	|	|	|	|	|			[split_attribute = captial-loss; predicate = 1485] 
-	|	|	|	|	|			|	[split_attribute = workclass; predicate = (Self-emp-not-inc, Local-gov)] 
+	|	|	|	|	|			|	[split_attribute = workclass; predicate = (Local-gov, Self-emp-not-inc)] 
 	|	|	|	|	|			|	|	[split_attribute = age; predicate = 64] 
 	|	|	|	|	|			|	|	|	[split_attribute = education; predicate = (Prof-school)] 
 	|	|	|	|	|			|	|	|	|	(label: 1) 
@@ -184,7 +184,7 @@
 	|	|	|	|		[split_attribute = hours-per-week; predicate = 30] 
 	|	|	|	|		|	(label: 0) 
 	|	|	|	|		|	[split_attribute = age; predicate = 41] 
-	|	|	|	|		|		[split_attribute = workclass; predicate = (Federal-gov, Private)] 
+	|	|	|	|		|		[split_attribute = workclass; predicate = (Private, Federal-gov)] 
 	|	|	|	|		|		|	[split_attribute = fnlwgt; predicate = 349169] 
 	|	|	|	|		|		|	|	[split_attribute = hours-per-week; predicate = 46] 
 	|	|	|	|		|		|	|	|	[split_attribute = hours-per-week; predicate = 36] 
@@ -201,7 +201,7 @@
 	|	|	|	|		|		|	(label: 0) 
 	|	|	|	|		|		[split_attribute = capital-gain; predicate = 3103] 
 	|	|	|	|		|			[split_attribute = captial-loss; predicate = 0] 
-	|	|	|	|		|			|	[split_attribute = workclass; predicate = (Self-emp-inc, Self-emp-not-inc, Private)] 
+	|	|	|	|		|			|	[split_attribute = workclass; predicate = (Self-emp-inc, Private, Self-emp-not-inc)] 
 	|	|	|	|		|			|	|	[split_attribute = fnlwgt; predicate = 318450] 
 	|	|	|	|		|			|	|	|	[split_attribute = age; predicate = 46] 
 	|	|	|	|		|			|	|	|	|	(label: 1) 
@@ -218,7 +218,7 @@
 	|	|	|	|					(label: 0) 
 	|	|	|	|					[split_attribute = fnlwgt; predicate = 120939] 
 	|	|	|	|						(label: 1) 
-	|	|	|	|						[split_attribute = occupation; predicate = (Transport-moving, Machine-op-inspct)] 
+	|	|	|	|						[split_attribute = occupation; predicate = (Machine-op-inspct, Transport-moving)] 
 	|	|	|	|							(label: 0) 
 	|	|	|	|							(label: 0) 
 	|	|	|	[split_attribute = captial-loss; predicate = 1977] 
@@ -234,7 +234,7 @@
 	|	|		|	(label: 1) 
 	|	|		(label: 1) 
 	|	[split_attribute = capital-gain; predicate = 5013] 
-	|		[split_attribute = occupation; predicate = (Adm-clerical, Sales, Exec-managerial, Tech-support, Protective-serv, Prof-specialty)] 
+	|		[split_attribute = occupation; predicate = (Exec-managerial, Adm-clerical, Tech-support, Sales, Prof-specialty, Protective-serv)] 
 	|		|	[split_attribute = age; predicate = 33] 
 	|		|	|	[split_attribute = age; predicate = 27] 
 	|		|	|	|	[split_attribute = age; predicate = 24] 
@@ -249,8 +249,8 @@
 	|		|	|	|	|	|	|			|	(label: 0) 
 	|		|	|	|	|	|	|			(label: 0) 
 	|		|	|	|	|	|	(label: 1) 
-	|		|	|	|	|	[split_attribute = occupation; predicate = (Exec-managerial, Tech-support, Sales)] 
-	|		|	|	|	|		[split_attribute = workclass; predicate = (Federal-gov, Local-gov)] 
+	|		|	|	|	|	[split_attribute = occupation; predicate = (Tech-support, Exec-managerial, Sales)] 
+	|		|	|	|	|		[split_attribute = workclass; predicate = (Local-gov, Federal-gov)] 
 	|		|	|	|	|		|	(label: 1) 
 	|		|	|	|	|		|	[split_attribute = education; predicate = (Some-college)] 
 	|		|	|	|	|		|		(label: 0) 
@@ -267,8 +267,8 @@
 	|		|	|	|	[split_attribute = captial-loss; predicate = 1740] 
 	|		|	|	|		[split_attribute = fnlwgt; predicate = 26973] 
 	|		|	|	|		|	(label: 1) 
-	|		|	|	|		|	[split_attribute = occupation; predicate = (Exec-managerial, Tech-support, Prof-specialty)] 
-	|		|	|	|		|		[split_attribute = workclass; predicate = (Self-emp-not-inc, Local-gov)] 
+	|		|	|	|		|	[split_attribute = occupation; predicate = (Tech-support, Exec-managerial, Prof-specialty)] 
+	|		|	|	|		|		[split_attribute = workclass; predicate = (Local-gov, Self-emp-not-inc)] 
 	|		|	|	|		|		|	(label: 0) 
 	|		|	|	|		|		|	[split_attribute = hours-per-week; predicate = 32] 
 	|		|	|	|		|		|		(label: 1) 
@@ -278,20 +278,20 @@
 	|		|	|	|		|		|			|	(label: 0) 
 	|		|	|	|		|		|			[split_attribute = fnlwgt; predicate = 405913] 
 	|		|	|	|		|		|				[split_attribute = fnlwgt; predicate = 377836] 
-	|		|	|	|		|		|				|	[split_attribute = education; predicate = (HS-grad, 12th, Assoc-acdm, Some-college, Assoc-voc)] 
-	|		|	|	|		|		|				|	|	[split_attribute = capital-gain; predicate = 3103] 
-	|		|	|	|		|		|				|	|	|	[split_attribute = fnlwgt; predicate = 350651] 
-	|		|	|	|		|		|				|	|	|	|	[split_attribute = fnlwgt; predicate = 342709] 
-	|		|	|	|		|		|				|	|	|	|	|	[split_attribute = fnlwgt; predicate = 223327] 
-	|		|	|	|		|		|				|	|	|	|	|	|	(label: 1) 
-	|		|	|	|		|		|				|	|	|	|	|	|	(label: 0) 
-	|		|	|	|		|		|				|	|	|	|	|	(label: 1) 
-	|		|	|	|		|		|				|	|	|	|	(label: 0) 
-	|		|	|	|		|		|				|	|	|	(label: 0) 
+	|		|	|	|		|		|				|	[split_attribute = education; predicate = (7th-8th, 11th, 10th, 1st-4th, 9th)] 
 	|		|	|	|		|		|				|	|	(label: 0) 
+	|		|	|	|		|		|				|	|	[split_attribute = capital-gain; predicate = 3103] 
+	|		|	|	|		|		|				|	|		[split_attribute = fnlwgt; predicate = 350651] 
+	|		|	|	|		|		|				|	|		|	[split_attribute = fnlwgt; predicate = 342709] 
+	|		|	|	|		|		|				|	|		|	|	[split_attribute = fnlwgt; predicate = 223327] 
+	|		|	|	|		|		|				|	|		|	|	|	(label: 1) 
+	|		|	|	|		|		|				|	|		|	|	|	(label: 0) 
+	|		|	|	|		|		|				|	|		|	|	(label: 1) 
+	|		|	|	|		|		|				|	|		|	(label: 0) 
+	|		|	|	|		|		|				|	|		(label: 0) 
 	|		|	|	|		|		|				|	(label: 1) 
 	|		|	|	|		|		|				(label: 0) 
-	|		|	|	|		|		[split_attribute = workclass; predicate = (State-gov, Private)] 
+	|		|	|	|		|		[split_attribute = workclass; predicate = (Private, State-gov)] 
 	|		|	|	|		|			[split_attribute = hours-per-week; predicate = 38] 
 	|		|	|	|		|			|	(label: 0) 
 	|		|	|	|		|			|	[split_attribute = age; predicate = 28] 
@@ -314,22 +314,22 @@
 	|		|	|	|		|				(label: 1) 
 	|		|	|	|		(label: 1) 
 	|		|	|	[split_attribute = captial-loss; predicate = 1844] 
-	|		|	|		[split_attribute = education; predicate = (Assoc-voc, Assoc-acdm, Some-college)] 
+	|		|	|		[split_attribute = education; predicate = (Assoc-acdm, Some-college, Assoc-voc)] 
 	|		|	|		|	[split_attribute = hours-per-week; predicate = 37] 
 	|		|	|		|	|	[split_attribute = relationship; predicate = (Wife)] 
 	|		|	|		|	|	|	(label: 0) 
 	|		|	|		|	|	|	[split_attribute = hours-per-week; predicate = 34] 
-	|		|	|		|	|	|		[split_attribute = occupation; predicate = (Exec-managerial, Tech-support, Sales)] 
+	|		|	|		|	|	|		[split_attribute = occupation; predicate = (Tech-support, Exec-managerial, Sales)] 
 	|		|	|		|	|	|		|	(label: 0) 
 	|		|	|		|	|	|		|	(label: 0) 
 	|		|	|		|	|	|		(label: 0) 
-	|		|	|		|	|	[split_attribute = workclass; predicate = (Self-emp-not-inc, State-gov)] 
+	|		|	|		|	|	[split_attribute = workclass; predicate = (State-gov, Self-emp-not-inc)] 
 	|		|	|		|	|		[split_attribute = occupation; predicate = (Tech-support, Adm-clerical)] 
 	|		|	|		|	|		|	(label: 1) 
 	|		|	|		|	|		|	[split_attribute = fnlwgt; predicate = 326083] 
 	|		|	|		|	|		|		[split_attribute = fnlwgt; predicate = 254291] 
 	|		|	|		|	|		|		|	[split_attribute = hours-per-week; predicate = 92] 
-	|		|	|		|	|		|		|	|	[split_attribute = race; predicate = (Other, Black)] 
+	|		|	|		|	|		|		|	|	[split_attribute = race; predicate = (Black, Other)] 
 	|		|	|		|	|		|		|	|	|	(label: 1) 
 	|		|	|		|	|		|		|	|	|	[split_attribute = age; predicate = 41] 
 	|		|	|		|	|		|		|	|	|		(label: 0) 
@@ -343,7 +343,7 @@
 	|		|	|		|	|		|		(label: 1) 
 	|		|	|		|	|		[split_attribute = captial-loss; predicate = 1485] 
 	|		|	|		|	|			[split_attribute = age; predicate = 64] 
-	|		|	|		|	|			|	[split_attribute = occupation; predicate = (Exec-managerial, Tech-support, Protective-serv)] 
+	|		|	|		|	|			|	[split_attribute = occupation; predicate = (Tech-support, Exec-managerial, Protective-serv)] 
 	|		|	|		|	|			|	|	[split_attribute = fnlwgt; predicate = 82552] 
 	|		|	|		|	|			|	|	|	(label: 0) 
 	|		|	|		|	|			|	|	|	[split_attribute = race; predicate = (Asian-Pac-Islander)] 
@@ -422,8 +422,8 @@
 	|		|	|		|		|		|	|	(label: 0) 
 	|		|	|		|		|		|	(label: 1) 
 	|		|	|		|		|		(label: 1) 
-	|		|	|		|		[split_attribute = education; predicate = (HS-grad, 1st-4th, 5th-6th, 12th)] 
-	|		|	|		|			[split_attribute = workclass; predicate = (Self-emp-not-inc, State-gov, Without-pay)] 
+	|		|	|		|		[split_attribute = education; predicate = (5th-6th, 12th, HS-grad, 1st-4th)] 
+	|		|	|		|			[split_attribute = workclass; predicate = (Without-pay, State-gov, Self-emp-not-inc)] 
 	|		|	|		|			|	[split_attribute = hours-per-week; predicate = 70] 
 	|		|	|		|			|	|	[split_attribute = occupation; predicate = (Prof-specialty)] 
 	|		|	|		|			|	|	|	(label: 1) 
@@ -435,7 +435,7 @@
 	|		|	|		|			|	|	|		|	(label: 1) 
 	|		|	|		|			|	|	|		(label: 0) 
 	|		|	|		|			|	|	(label: 1) 
-	|		|	|		|			|	[split_attribute = occupation; predicate = (Exec-managerial, Tech-support)] 
+	|		|	|		|			|	[split_attribute = occupation; predicate = (Tech-support, Exec-managerial)] 
 	|		|	|		|			|		[split_attribute = fnlwgt; predicate = 189933] 
 	|		|	|		|			|		|	[split_attribute = age; predicate = 49] 
 	|		|	|		|			|		|	|	[split_attribute = fnlwgt; predicate = 76280] 
@@ -512,75 +512,75 @@
 	|		|	|			|	(label: 1) 
 	|		|	|			|	(label: 1) 
 	|		|	|			(label: 0) 
-	|		|	[split_attribute = education; predicate = (Assoc-voc, Assoc-acdm, Some-college, HS-grad)] 
+	|		|	[split_attribute = education; predicate = (Assoc-acdm, Some-college, Assoc-voc, HS-grad)] 
 	|		|		[split_attribute = captial-loss; predicate = 1740] 
 	|		|		|	[split_attribute = age; predicate = 35] 
 	|		|		|	|	[split_attribute = age; predicate = 29] 
 	|		|		|	|	|	[split_attribute = marital-status; predicate = (Married-civ-spouse)] 
-	|		|		|	|	|	|	[split_attribute = education; predicate = (HS-grad, Assoc-acdm)] 
-	|		|		|	|	|	|	|	[split_attribute = workclass; predicate = (State-gov)] 
-	|		|		|	|	|	|	|	|	(label: 1) 
-	|		|		|	|	|	|	|	|	[split_attribute = capital-gain; predicate = 4064] 
-	|		|		|	|	|	|	|	|		[split_attribute = hours-per-week; predicate = 72] 
-	|		|		|	|	|	|	|	|		|	[split_attribute = fnlwgt; predicate = 278720] 
-	|		|		|	|	|	|	|	|		|	|	[split_attribute = fnlwgt; predicate = 278254] 
-	|		|		|	|	|	|	|	|		|	|	|	[split_attribute = age; predicate = 23] 
-	|		|		|	|	|	|	|	|		|	|	|	|	(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|	[split_attribute = fnlwgt; predicate = 238768] 
-	|		|		|	|	|	|	|	|		|	|	|	|		[split_attribute = occupation; predicate = (Transport-moving, Craft-repair)] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	[split_attribute = workclass; predicate = (Private)] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	[split_attribute = fnlwgt; predicate = 62535] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	|	(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	|	[split_attribute = fnlwgt; predicate = 86872] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	|		(label: 1) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	|		[split_attribute = fnlwgt; predicate = 210714] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	|			[split_attribute = fnlwgt; predicate = 206250] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	|			|	[split_attribute = hours-per-week; predicate = 45] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	|			|	|	(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	|			|	|	(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	|			|	(label: 1) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	|			(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	|	(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|	[split_attribute = fnlwgt; predicate = 229523] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|		[split_attribute = hours-per-week; predicate = 62] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|		|	[split_attribute = fnlwgt; predicate = 130438] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|		|	|	(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|		|	|	[split_attribute = fnlwgt; predicate = 132686] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|		|	|		(label: 1) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|		|	|		[split_attribute = age; predicate = 28] 
-	|		|		|	|	|	|	|	|		|	|	|	|		|		|	|			(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|		|	|			(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|		|	(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|		|		(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	|		(label: 0) 
-	|		|		|	|	|	|	|	|		|	|	|	(label: 1) 
-	|		|		|	|	|	|	|	|		|	|	[split_attribute = age; predicate = 22] 
-	|		|		|	|	|	|	|	|		|	|		(label: 0) 
-	|		|		|	|	|	|	|	|		|	|		(label: 0) 
-	|		|		|	|	|	|	|	|		|	(label: 0) 
-	|		|		|	|	|	|	|	|		(label: 0) 
+	|		|		|	|	|	|	[split_attribute = education; predicate = (Assoc-voc, Some-college)] 
 	|		|		|	|	|	|	|	[split_attribute = fnlwgt; predicate = 373550] 
-	|		|		|	|	|	|	|		[split_attribute = occupation; predicate = (Transport-moving, Craft-repair)] 
-	|		|		|	|	|	|	|		|	[split_attribute = hours-per-week; predicate = 49] 
-	|		|		|	|	|	|	|		|	|	[split_attribute = workclass; predicate = (Federal-gov)] 
-	|		|		|	|	|	|	|		|	|	|	(label: 1) 
-	|		|		|	|	|	|	|		|	|	|	[split_attribute = race; predicate = (White)] 
-	|		|		|	|	|	|	|		|	|	|		(label: 0) 
-	|		|		|	|	|	|	|		|	|	|		(label: 0) 
-	|		|		|	|	|	|	|		|	|	(label: 0) 
-	|		|		|	|	|	|	|		|	[split_attribute = workclass; predicate = (Self-emp-inc)] 
-	|		|		|	|	|	|	|		|		(label: 1) 
-	|		|		|	|	|	|	|		|		[split_attribute = age; predicate = 25] 
-	|		|		|	|	|	|	|		|			(label: 0) 
-	|		|		|	|	|	|	|		|			(label: 0) 
-	|		|		|	|	|	|	|		(label: 0) 
+	|		|		|	|	|	|	|	|	[split_attribute = occupation; predicate = (Craft-repair, Transport-moving)] 
+	|		|		|	|	|	|	|	|	|	[split_attribute = hours-per-week; predicate = 49] 
+	|		|		|	|	|	|	|	|	|	|	[split_attribute = workclass; predicate = (Federal-gov)] 
+	|		|		|	|	|	|	|	|	|	|	|	(label: 1) 
+	|		|		|	|	|	|	|	|	|	|	|	[split_attribute = race; predicate = (White)] 
+	|		|		|	|	|	|	|	|	|	|	|		(label: 0) 
+	|		|		|	|	|	|	|	|	|	|	|		(label: 0) 
+	|		|		|	|	|	|	|	|	|	|	(label: 0) 
+	|		|		|	|	|	|	|	|	|	[split_attribute = workclass; predicate = (Self-emp-inc)] 
+	|		|		|	|	|	|	|	|	|		(label: 1) 
+	|		|		|	|	|	|	|	|	|		[split_attribute = age; predicate = 25] 
+	|		|		|	|	|	|	|	|	|			(label: 0) 
+	|		|		|	|	|	|	|	|	|			(label: 0) 
+	|		|		|	|	|	|	|	|	(label: 0) 
+	|		|		|	|	|	|	|	[split_attribute = workclass; predicate = (State-gov)] 
+	|		|		|	|	|	|	|		(label: 1) 
+	|		|		|	|	|	|	|		[split_attribute = capital-gain; predicate = 4064] 
+	|		|		|	|	|	|	|			[split_attribute = hours-per-week; predicate = 72] 
+	|		|		|	|	|	|	|			|	[split_attribute = fnlwgt; predicate = 278720] 
+	|		|		|	|	|	|	|			|	|	[split_attribute = fnlwgt; predicate = 278254] 
+	|		|		|	|	|	|	|			|	|	|	[split_attribute = age; predicate = 23] 
+	|		|		|	|	|	|	|			|	|	|	|	(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|	[split_attribute = fnlwgt; predicate = 238768] 
+	|		|		|	|	|	|	|			|	|	|	|		[split_attribute = occupation; predicate = (Craft-repair, Transport-moving)] 
+	|		|		|	|	|	|	|			|	|	|	|		|	[split_attribute = workclass; predicate = (Private)] 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	[split_attribute = fnlwgt; predicate = 62535] 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	|	(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	|	[split_attribute = fnlwgt; predicate = 86872] 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	|		(label: 1) 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	|		[split_attribute = fnlwgt; predicate = 210714] 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	|			[split_attribute = fnlwgt; predicate = 206250] 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	|			|	[split_attribute = hours-per-week; predicate = 45] 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	|			|	|	(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	|			|	|	(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	|			|	(label: 1) 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	|			(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|		|	|	(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|		|	[split_attribute = fnlwgt; predicate = 229523] 
+	|		|		|	|	|	|	|			|	|	|	|		|		[split_attribute = hours-per-week; predicate = 62] 
+	|		|		|	|	|	|	|			|	|	|	|		|		|	[split_attribute = fnlwgt; predicate = 130438] 
+	|		|		|	|	|	|	|			|	|	|	|		|		|	|	(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|		|		|	|	[split_attribute = fnlwgt; predicate = 132686] 
+	|		|		|	|	|	|	|			|	|	|	|		|		|	|		(label: 1) 
+	|		|		|	|	|	|	|			|	|	|	|		|		|	|		[split_attribute = age; predicate = 28] 
+	|		|		|	|	|	|	|			|	|	|	|		|		|	|			(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|		|		|	|			(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|		|		|	(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|		|		(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	|		(label: 0) 
+	|		|		|	|	|	|	|			|	|	|	(label: 1) 
+	|		|		|	|	|	|	|			|	|	[split_attribute = age; predicate = 22] 
+	|		|		|	|	|	|	|			|	|		(label: 0) 
+	|		|		|	|	|	|	|			|	|		(label: 0) 
+	|		|		|	|	|	|	|			|	(label: 0) 
+	|		|		|	|	|	|	|			(label: 0) 
 	|		|		|	|	|	|	(label: 1) 
 	|		|		|	|	|	[split_attribute = fnlwgt; predicate = 85708] 
 	|		|		|	|	|		[split_attribute = relationship; predicate = (Wife)] 
 	|		|		|	|	|		|	(label: 1) 
 	|		|		|	|	|		|	[split_attribute = fnlwgt; predicate = 35644] 
 	|		|		|	|	|		|		(label: 0) 
-	|		|		|	|	|		|		[split_attribute = occupation; predicate = (Transport-moving, Farming-fishing, Machine-op-inspct)] 
+	|		|		|	|	|		|		[split_attribute = occupation; predicate = (Machine-op-inspct, Farming-fishing, Transport-moving)] 
 	|		|		|	|	|		|			(label: 0) 
 	|		|		|	|	|		|			(label: 0) 
 	|		|		|	|	|		[split_attribute = hours-per-week; predicate = 54] 
@@ -591,19 +591,19 @@
 	|		|		|	|	|			|		|	[split_attribute = age; predicate = 30] 
 	|		|		|	|	|			|		|	|	(label: 0) 
 	|		|		|	|	|			|		|	|	[split_attribute = capital-gain; predicate = 3781] 
-	|		|		|	|	|			|		|	|		[split_attribute = education; predicate = (HS-grad, Some-college)] 
-	|		|		|	|	|			|		|	|		|	[split_attribute = fnlwgt; predicate = 265535] 
-	|		|		|	|	|			|		|	|		|	|	[split_attribute = fnlwgt; predicate = 176862] 
-	|		|		|	|	|			|		|	|		|	|	|	[split_attribute = fnlwgt; predicate = 111567] 
-	|		|		|	|	|			|		|	|		|	|	|	|	(label: 0) 
-	|		|		|	|	|			|		|	|		|	|	|	|	[split_attribute = age; predicate = 34] 
-	|		|		|	|	|			|		|	|		|	|	|	|		(label: 0) 
-	|		|		|	|	|			|		|	|		|	|	|	|		(label: 0) 
-	|		|		|	|	|			|		|	|		|	|	|	[split_attribute = fnlwgt; predicate = 251421] 
-	|		|		|	|	|			|		|	|		|	|	|		(label: 0) 
-	|		|		|	|	|			|		|	|		|	|	|		(label: 1) 
-	|		|		|	|	|			|		|	|		|	|	(label: 0) 
+	|		|		|	|	|			|		|	|		[split_attribute = education; predicate = (Assoc-voc, Assoc-acdm)] 
 	|		|		|	|	|			|		|	|		|	(label: 0) 
+	|		|		|	|	|			|		|	|		|	[split_attribute = fnlwgt; predicate = 265535] 
+	|		|		|	|	|			|		|	|		|		[split_attribute = fnlwgt; predicate = 176862] 
+	|		|		|	|	|			|		|	|		|		|	[split_attribute = fnlwgt; predicate = 111567] 
+	|		|		|	|	|			|		|	|		|		|	|	(label: 0) 
+	|		|		|	|	|			|		|	|		|		|	|	[split_attribute = age; predicate = 34] 
+	|		|		|	|	|			|		|	|		|		|	|		(label: 0) 
+	|		|		|	|	|			|		|	|		|		|	|		(label: 0) 
+	|		|		|	|	|			|		|	|		|		|	[split_attribute = fnlwgt; predicate = 251421] 
+	|		|		|	|	|			|		|	|		|		|		(label: 0) 
+	|		|		|	|	|			|		|	|		|		|		(label: 1) 
+	|		|		|	|	|			|		|	|		|		(label: 0) 
 	|		|		|	|	|			|		|	|		(label: 1) 
 	|		|		|	|	|			|		|	(label: 1) 
 	|		|		|	|	|			|		[split_attribute = fnlwgt; predicate = 226296] 
@@ -633,10 +633,10 @@
 	|		|		|	|	|			|				|		|	(label: 0) 
 	|		|		|	|	|			|				|		(label: 1) 
 	|		|		|	|	|			|				(label: 0) 
-	|		|		|	|	|			[split_attribute = occupation; predicate = (Transport-moving, Craft-repair, Machine-op-inspct)] 
+	|		|		|	|	|			[split_attribute = occupation; predicate = (Machine-op-inspct, Craft-repair, Transport-moving)] 
 	|		|		|	|	|				(label: 0) 
 	|		|		|	|	|				(label: 0) 
-	|		|		|	|	[split_attribute = occupation; predicate = (Transport-moving, Craft-repair, Machine-op-inspct)] 
+	|		|		|	|	[split_attribute = occupation; predicate = (Machine-op-inspct, Craft-repair, Transport-moving)] 
 	|		|		|	|		[split_attribute = hours-per-week; predicate = 35] 
 	|		|		|	|		|	[split_attribute = education; predicate = (Some-college)] 
 	|		|		|	|		|	|	(label: 0) 
@@ -677,33 +677,33 @@
 	|		|		|	|		|		|	|	|	|			|		(label: 1) 
 	|		|		|	|		|		|	|	|	|			[split_attribute = fnlwgt; predicate = 152958] 
 	|		|		|	|		|		|	|	|	|				(label: 1) 
-	|		|		|	|		|		|	|	|	|				[split_attribute = education; predicate = (HS-grad, Some-college)] 
-	|		|		|	|		|		|	|	|	|					[split_attribute = fnlwgt; predicate = 182370] 
-	|		|		|	|		|		|	|	|	|					|	[split_attribute = fnlwgt; predicate = 163455] 
-	|		|		|	|		|		|	|	|	|					|	|	(label: 0) 
-	|		|		|	|		|		|	|	|	|					|	|	(label: 0) 
-	|		|		|	|		|		|	|	|	|					|	[split_attribute = fnlwgt; predicate = 183009] 
-	|		|		|	|		|		|	|	|	|					|		(label: 1) 
-	|		|		|	|		|		|	|	|	|					|		[split_attribute = age; predicate = 45] 
-	|		|		|	|		|		|	|	|	|					|			[split_attribute = fnlwgt; predicate = 210013] 
-	|		|		|	|		|		|	|	|	|					|			|	[split_attribute = fnlwgt; predicate = 207685] 
-	|		|		|	|		|		|	|	|	|					|			|	|	(label: 0) 
-	|		|		|	|		|		|	|	|	|					|			|	|	(label: 1) 
-	|		|		|	|		|		|	|	|	|					|			|	[split_attribute = workclass; predicate = (Federal-gov, Local-gov)] 
-	|		|		|	|		|		|	|	|	|					|			|		(label: 1) 
-	|		|		|	|		|		|	|	|	|					|			|		[split_attribute = fnlwgt; predicate = 268292] 
-	|		|		|	|		|		|	|	|	|					|			|			[split_attribute = fnlwgt; predicate = 222434] 
-	|		|		|	|		|		|	|	|	|					|			|			|	(label: 0) 
-	|		|		|	|		|		|	|	|	|					|			|			|	(label: 0) 
-	|		|		|	|		|		|	|	|	|					|			|			[split_attribute = fnlwgt; predicate = 269015] 
-	|		|		|	|		|		|	|	|	|					|			|				(label: 1) 
-	|		|		|	|		|		|	|	|	|					|			|				[split_attribute = fnlwgt; predicate = 373050] 
-	|		|		|	|		|		|	|	|	|					|			|					[split_attribute = occupation; predicate = (Craft-repair)] 
-	|		|		|	|		|		|	|	|	|					|			|					|	(label: 0) 
-	|		|		|	|		|		|	|	|	|					|			|					|	(label: 0) 
-	|		|		|	|		|		|	|	|	|					|			|					(label: 1) 
-	|		|		|	|		|		|	|	|	|					|			(label: 1) 
+	|		|		|	|		|		|	|	|	|				[split_attribute = education; predicate = (Assoc-voc, Assoc-acdm)] 
 	|		|		|	|		|		|	|	|	|					(label: 0) 
+	|		|		|	|		|		|	|	|	|					[split_attribute = fnlwgt; predicate = 182370] 
+	|		|		|	|		|		|	|	|	|						[split_attribute = fnlwgt; predicate = 163455] 
+	|		|		|	|		|		|	|	|	|						|	(label: 0) 
+	|		|		|	|		|		|	|	|	|						|	(label: 0) 
+	|		|		|	|		|		|	|	|	|						[split_attribute = fnlwgt; predicate = 183009] 
+	|		|		|	|		|		|	|	|	|							(label: 1) 
+	|		|		|	|		|		|	|	|	|							[split_attribute = age; predicate = 45] 
+	|		|		|	|		|		|	|	|	|								[split_attribute = fnlwgt; predicate = 210013] 
+	|		|		|	|		|		|	|	|	|								|	[split_attribute = fnlwgt; predicate = 207685] 
+	|		|		|	|		|		|	|	|	|								|	|	(label: 0) 
+	|		|		|	|		|		|	|	|	|								|	|	(label: 1) 
+	|		|		|	|		|		|	|	|	|								|	[split_attribute = workclass; predicate = (Local-gov, Federal-gov)] 
+	|		|		|	|		|		|	|	|	|								|		(label: 1) 
+	|		|		|	|		|		|	|	|	|								|		[split_attribute = fnlwgt; predicate = 268292] 
+	|		|		|	|		|		|	|	|	|								|			[split_attribute = fnlwgt; predicate = 222434] 
+	|		|		|	|		|		|	|	|	|								|			|	(label: 0) 
+	|		|		|	|		|		|	|	|	|								|			|	(label: 0) 
+	|		|		|	|		|		|	|	|	|								|			[split_attribute = fnlwgt; predicate = 269015] 
+	|		|		|	|		|		|	|	|	|								|				(label: 1) 
+	|		|		|	|		|		|	|	|	|								|				[split_attribute = fnlwgt; predicate = 373050] 
+	|		|		|	|		|		|	|	|	|								|					[split_attribute = occupation; predicate = (Craft-repair)] 
+	|		|		|	|		|		|	|	|	|								|					|	(label: 0) 
+	|		|		|	|		|		|	|	|	|								|					|	(label: 0) 
+	|		|		|	|		|		|	|	|	|								|					(label: 1) 
+	|		|		|	|		|		|	|	|	|								(label: 1) 
 	|		|		|	|		|		|	|	|	[split_attribute = fnlwgt; predicate = 88233] 
 	|		|		|	|		|		|	|	|		(label: 0) 
 	|		|		|	|		|		|	|	|		[split_attribute = education; predicate = (HS-grad)] 
@@ -738,7 +738,7 @@
 	|		|		|	|		|		|	|	|				|	(label: 1) 
 	|		|		|	|		|		|	|	|				(label: 0) 
 	|		|		|	|		|		|	|	[split_attribute = age; predicate = 59] 
-	|		|		|	|		|		|	|		[split_attribute = workclass; predicate = (Self-emp-not-inc, Local-gov)] 
+	|		|		|	|		|		|	|		[split_attribute = workclass; predicate = (Local-gov, Self-emp-not-inc)] 
 	|		|		|	|		|		|	|		|	[split_attribute = hours-per-week; predicate = 55] 
 	|		|		|	|		|		|	|		|	|	[split_attribute = fnlwgt; predicate = 204322] 
 	|		|		|	|		|		|	|		|	|	|	(label: 0) 
@@ -763,55 +763,55 @@
 	|		|		|	|		|		|	|		|		|	|	|	|	(label: 1) 
 	|		|		|	|		|		|	|		|		|	|	|	(label: 0) 
 	|		|		|	|		|		|	|		|		|	|	(label: 1) 
-	|		|		|	|		|		|	|		|		|	[split_attribute = education; predicate = (HS-grad, Assoc-acdm)] 
-	|		|		|	|		|		|	|		|		|		[split_attribute = workclass; predicate = (Self-emp-inc, Federal-gov)] 
-	|		|		|	|		|		|	|		|		|		|	(label: 1) 
-	|		|		|	|		|		|	|		|		|		|	[split_attribute = race; predicate = (Asian-Pac-Islander, Black)] 
-	|		|		|	|		|		|	|		|		|		|		(label: 0) 
-	|		|		|	|		|		|	|		|		|		|		[split_attribute = capital-gain; predicate = 2885] 
-	|		|		|	|		|		|	|		|		|		|			[split_attribute = hours-per-week; predicate = 70] 
-	|		|		|	|		|		|	|		|		|		|			|	[split_attribute = hours-per-week; predicate = 60] 
-	|		|		|	|		|		|	|		|		|		|			|	|	[split_attribute = hours-per-week; predicate = 47] 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	[split_attribute = workclass; predicate = (State-gov)] 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|	(label: 0) 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|	[split_attribute = age; predicate = 57] 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		[split_attribute = education; predicate = (Assoc-acdm)] 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|	(label: 0) 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|	[split_attribute = fnlwgt; predicate = 89054] 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|		(label: 0) 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|		[split_attribute = fnlwgt; predicate = 98092] 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|			(label: 1) 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|			[split_attribute = hours-per-week; predicate = 45] 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|				[split_attribute = age; predicate = 50] 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|				|	[split_attribute = occupation; predicate = (Transport-moving)] 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|				|	|	(label: 0) 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|				|	|	(label: 1) 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|				|	(label: 0) 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		|				(label: 0) 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	|		(label: 1) 
-	|		|		|	|		|		|	|		|		|		|			|	|	|	(label: 1) 
-	|		|		|	|		|		|	|		|		|		|			|	|	(label: 0) 
-	|		|		|	|		|		|	|		|		|		|			|	(label: 1) 
-	|		|		|	|		|		|	|		|		|		|			(label: 1) 
+	|		|		|	|		|		|	|		|		|	[split_attribute = education; predicate = (Assoc-voc, Some-college)] 
 	|		|		|	|		|		|	|		|		|		[split_attribute = age; predicate = 47] 
-	|		|		|	|		|		|	|		|		|			(label: 0) 
-	|		|		|	|		|		|	|		|		|			[split_attribute = workclass; predicate = (Federal-gov)] 
+	|		|		|	|		|		|	|		|		|		|	(label: 0) 
+	|		|		|	|		|		|	|		|		|		|	[split_attribute = workclass; predicate = (Federal-gov)] 
+	|		|		|	|		|		|	|		|		|		|		(label: 0) 
+	|		|		|	|		|		|	|		|		|		|		[split_attribute = fnlwgt; predicate = 30447] 
+	|		|		|	|		|		|	|		|		|		|			(label: 0) 
+	|		|		|	|		|		|	|		|		|		|			[split_attribute = hours-per-week; predicate = 50] 
+	|		|		|	|		|		|	|		|		|		|				[split_attribute = fnlwgt; predicate = 339954] 
+	|		|		|	|		|		|	|		|		|		|				|	[split_attribute = capital-gain; predicate = 3103] 
+	|		|		|	|		|		|	|		|		|		|				|	|	[split_attribute = age; predicate = 49] 
+	|		|		|	|		|		|	|		|		|		|				|	|	|	(label: 1) 
+	|		|		|	|		|		|	|		|		|		|				|	|	|	[split_attribute = workclass; predicate = (State-gov)] 
+	|		|		|	|		|		|	|		|		|		|				|	|	|		(label: 0) 
+	|		|		|	|		|		|	|		|		|		|				|	|	|		[split_attribute = age; predicate = 51] 
+	|		|		|	|		|		|	|		|		|		|				|	|	|			(label: 1) 
+	|		|		|	|		|		|	|		|		|		|				|	|	|			(label: 1) 
+	|		|		|	|		|		|	|		|		|		|				|	|	(label: 0) 
+	|		|		|	|		|		|	|		|		|		|				|	(label: 0) 
+	|		|		|	|		|		|	|		|		|		|				(label: 0) 
+	|		|		|	|		|		|	|		|		|		[split_attribute = workclass; predicate = (Self-emp-inc, Federal-gov)] 
+	|		|		|	|		|		|	|		|		|			(label: 1) 
+	|		|		|	|		|		|	|		|		|			[split_attribute = race; predicate = (White, Amer-Indian-Eskimo)] 
+	|		|		|	|		|		|	|		|		|				[split_attribute = capital-gain; predicate = 2885] 
+	|		|		|	|		|		|	|		|		|				|	[split_attribute = hours-per-week; predicate = 70] 
+	|		|		|	|		|		|	|		|		|				|	|	[split_attribute = hours-per-week; predicate = 60] 
+	|		|		|	|		|		|	|		|		|				|	|	|	[split_attribute = hours-per-week; predicate = 47] 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	[split_attribute = workclass; predicate = (Private)] 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	[split_attribute = age; predicate = 57] 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	[split_attribute = education; predicate = (Assoc-acdm)] 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|	(label: 0) 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|	[split_attribute = fnlwgt; predicate = 89054] 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|		(label: 0) 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|		[split_attribute = fnlwgt; predicate = 98092] 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|			(label: 1) 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|			[split_attribute = hours-per-week; predicate = 45] 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|				[split_attribute = age; predicate = 50] 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|				|	[split_attribute = occupation; predicate = (Transport-moving)] 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|				|	|	(label: 0) 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|				|	|	(label: 1) 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|				|	(label: 0) 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	|				(label: 0) 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	|	(label: 1) 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	|	(label: 0) 
+	|		|		|	|		|		|	|		|		|				|	|	|	|	(label: 1) 
+	|		|		|	|		|		|	|		|		|				|	|	|	(label: 0) 
+	|		|		|	|		|		|	|		|		|				|	|	(label: 1) 
+	|		|		|	|		|		|	|		|		|				|	(label: 1) 
 	|		|		|	|		|		|	|		|		|				(label: 0) 
-	|		|		|	|		|		|	|		|		|				[split_attribute = fnlwgt; predicate = 30447] 
-	|		|		|	|		|		|	|		|		|					(label: 0) 
-	|		|		|	|		|		|	|		|		|					[split_attribute = hours-per-week; predicate = 50] 
-	|		|		|	|		|		|	|		|		|						[split_attribute = fnlwgt; predicate = 339954] 
-	|		|		|	|		|		|	|		|		|						|	[split_attribute = capital-gain; predicate = 3103] 
-	|		|		|	|		|		|	|		|		|						|	|	[split_attribute = age; predicate = 49] 
-	|		|		|	|		|		|	|		|		|						|	|	|	(label: 1) 
-	|		|		|	|		|		|	|		|		|						|	|	|	[split_attribute = workclass; predicate = (State-gov)] 
-	|		|		|	|		|		|	|		|		|						|	|	|		(label: 0) 
-	|		|		|	|		|		|	|		|		|						|	|	|		[split_attribute = age; predicate = 51] 
-	|		|		|	|		|		|	|		|		|						|	|	|			(label: 1) 
-	|		|		|	|		|		|	|		|		|						|	|	|			(label: 1) 
-	|		|		|	|		|		|	|		|		|						|	|	(label: 0) 
-	|		|		|	|		|		|	|		|		|						|	(label: 0) 
-	|		|		|	|		|		|	|		|		|						(label: 0) 
 	|		|		|	|		|		|	|		|		(label: 0) 
 	|		|		|	|		|		|	|		[split_attribute = fnlwgt; predicate = 243283] 
 	|		|		|	|		|		|	|			[split_attribute = occupation; predicate = (Transport-moving)] 
@@ -826,11 +826,11 @@
 	|		|		|	|			[split_attribute = capital-gain; predicate = 3456] 
 	|		|		|	|			|	[split_attribute = relationship; predicate = (Wife)] 
 	|		|		|	|			|	|	(label: 0) 
-	|		|		|	|			|	|	[split_attribute = race; predicate = (Asian-Pac-Islander, Black)] 
-	|		|		|	|			|	|		(label: 0) 
+	|		|		|	|			|	|	[split_attribute = race; predicate = (White, Amer-Indian-Eskimo)] 
 	|		|		|	|			|	|		[split_attribute = education; predicate = (Assoc-voc)] 
-	|		|		|	|			|	|			(label: 0) 
-	|		|		|	|			|	|			(label: 0) 
+	|		|		|	|			|	|		|	(label: 0) 
+	|		|		|	|			|	|		|	(label: 0) 
+	|		|		|	|			|	|		(label: 0) 
 	|		|		|	|			|	(label: 1) 
 	|		|		|	|			[split_attribute = age; predicate = 59] 
 	|		|		|	|				[split_attribute = hours-per-week; predicate = 52] 
@@ -851,7 +851,7 @@
 	|		|		|	|				|	|	|			|	(label: 0) 
 	|		|		|	|				|	|	|			[split_attribute = education; predicate = (Assoc-voc)] 
 	|		|		|	|				|	|	|				(label: 1) 
-	|		|		|	|				|	|	|				[split_attribute = workclass; predicate = (Self-emp-inc, State-gov, Local-gov)] 
+	|		|		|	|				|	|	|				[split_attribute = workclass; predicate = (Self-emp-inc, Local-gov, State-gov)] 
 	|		|		|	|				|	|	|					(label: 0) 
 	|		|		|	|				|	|	|					[split_attribute = age; predicate = 41] 
 	|		|		|	|				|	|	|						(label: 0) 
@@ -887,11 +887,11 @@
 	|		|			|	[split_attribute = workclass; predicate = (Self-emp-inc)] 
 	|		|			|	|	(label: 1) 
 	|		|			|	|	[split_attribute = hours-per-week; predicate = 65] 
-	|		|			|	|		[split_attribute = workclass; predicate = (Self-emp-not-inc, Local-gov)] 
+	|		|			|	|		[split_attribute = workclass; predicate = (Local-gov, Self-emp-not-inc)] 
 	|		|			|	|		|	(label: 0) 
 	|		|			|	|		|	[split_attribute = race; predicate = (Asian-Pac-Islander)] 
 	|		|			|	|		|		(label: 0) 
-	|		|			|	|		|		[split_attribute = occupation; predicate = (Transport-moving, Craft-repair)] 
+	|		|			|	|		|		[split_attribute = occupation; predicate = (Craft-repair, Transport-moving)] 
 	|		|			|	|		|			[split_attribute = education; predicate = (12th, 10th)] 
 	|		|			|	|		|			|	(label: 0) 
 	|		|			|	|		|			|	[split_attribute = age; predicate = 24] 
@@ -900,9 +900,9 @@
 	|		|			|	|		|			(label: 0) 
 	|		|			|	|		(label: 0) 
 	|		|			|	[split_attribute = education; predicate = (12th, 10th)] 
-	|		|			|		[split_attribute = occupation; predicate = (Farming-fishing, Other-service)] 
+	|		|			|		[split_attribute = occupation; predicate = (Other-service, Farming-fishing)] 
 	|		|			|		|	(label: 0) 
-	|		|			|		|	[split_attribute = workclass; predicate = (Self-emp-inc, Federal-gov, Local-gov)] 
+	|		|			|		|	[split_attribute = workclass; predicate = (Self-emp-inc, Local-gov, Federal-gov)] 
 	|		|			|		|		(label: 0) 
 	|		|			|		|		[split_attribute = fnlwgt; predicate = 85995] 
 	|		|			|		|			(label: 0) 
@@ -929,7 +929,7 @@
 	|		|			|				|		[split_attribute = fnlwgt; predicate = 380462] 
 	|		|			|				|			[split_attribute = workclass; predicate = (Self-emp-not-inc)] 
 	|		|			|				|			|	(label: 0) 
-	|		|			|				|			|	[split_attribute = education; predicate = (1st-4th, 11th)] 
+	|		|			|				|			|	[split_attribute = education; predicate = (11th, 1st-4th)] 
 	|		|			|				|			|		[split_attribute = fnlwgt; predicate = 72442] 
 	|		|			|				|			|		|	(label: 0) 
 	|		|			|				|			|		|	[split_attribute = occupation; predicate = (Craft-repair)] 
@@ -943,11 +943,11 @@
 	|		|			|				|			|				(label: 0) 
 	|		|			|				|			|				(label: 0) 
 	|		|			|				|			(label: 0) 
-	|		|			|				[split_attribute = occupation; predicate = (Transport-moving, Handlers-cleaners, Machine-op-inspct)] 
-	|		|			|					(label: 0) 
+	|		|			|				[split_attribute = occupation; predicate = (Farming-fishing, Craft-repair, Other-service)] 
 	|		|			|					[split_attribute = fnlwgt; predicate = 373366] 
-	|		|			|						(label: 0) 
-	|		|			|						(label: 0) 
+	|		|			|					|	(label: 0) 
+	|		|			|					|	(label: 0) 
+	|		|			|					(label: 0) 
 	|		|			(label: 0) 
 	|		[split_attribute = age; predicate = 60] 
 	|			(label: 1) 
@@ -977,7 +977,7 @@
 		|	|	|	|		|	|		|		[split_attribute = fnlwgt; predicate = 185057] 
 		|	|	|	|		|	|		|		|	(label: 0) 
 		|	|	|	|		|	|		|		|	(label: 0) 
-		|	|	|	|		|	|		|		[split_attribute = workclass; predicate = (Federal-gov, Local-gov)] 
+		|	|	|	|		|	|		|		[split_attribute = workclass; predicate = (Local-gov, Federal-gov)] 
 		|	|	|	|		|	|		|			(label: 0) 
 		|	|	|	|		|	|		|			(label: 0) 
 		|	|	|	|		|	|		[split_attribute = age; predicate = 64] 
@@ -997,7 +997,7 @@
 		|	|		|	|	(label: 1) 
 		|	|		|	(label: 1) 
 		|	|		[split_attribute = education; predicate = (Masters)] 
-		|	|			[split_attribute = occupation; predicate = (Farming-fishing, Prof-specialty, Other-service)] 
+		|	|			[split_attribute = occupation; predicate = (Other-service, Farming-fishing, Prof-specialty)] 
 		|	|			|	[split_attribute = age; predicate = 35] 
 		|	|			|	|	(label: 0) 
 		|	|			|	|	[split_attribute = race; predicate = (Amer-Indian-Eskimo)] 
@@ -1005,9 +1005,9 @@
 		|	|			|	|		[split_attribute = fnlwgt; predicate = 71195] 
 		|	|			|	|			(label: 0) 
 		|	|			|	|			(label: 0) 
-		|	|			|	[split_attribute = sex; predicate = (Female)] 
-		|	|			|		(label: 0) 
+		|	|			|	[split_attribute = sex; predicate = (Male)] 
 		|	|			|		(label: 1) 
+		|	|			|		(label: 0) 
 		|	|			[split_attribute = captial-loss; predicate = 0] 
 		|	|				[split_attribute = fnlwgt; predicate = 37869] 
 		|	|				|	(label: 0) 
@@ -1017,7 +1017,7 @@
 		|	|				(label: 1) 
 		|	[split_attribute = captial-loss; predicate = 2206] 
 		|		[split_attribute = hours-per-week; predicate = 44] 
-		|		|	[split_attribute = occupation; predicate = (Exec-managerial, Protective-serv, Prof-specialty)] 
+		|		|	[split_attribute = occupation; predicate = (Exec-managerial, Prof-specialty, Protective-serv)] 
 		|		|	|	[split_attribute = age; predicate = 34] 
 		|		|	|	|	[split_attribute = marital-status; predicate = (Married-civ-spouse)] 
 		|		|	|	|	|	(label: 0) 
@@ -1062,12 +1062,12 @@
 		|		|	|	|		|	|		[split_attribute = captial-loss; predicate = 0] 
 		|		|	|	|		|	|		|	[split_attribute = age; predicate = 35] 
 		|		|	|	|		|	|		|	|	(label: 0) 
-		|		|	|	|		|	|		|	|	[split_attribute = education; predicate = (HS-grad, Assoc-voc)] 
+		|		|	|	|		|	|		|	|	[split_attribute = education; predicate = (Assoc-voc, HS-grad)] 
 		|		|	|	|		|	|		|	|		(label: 0) 
 		|		|	|	|		|	|		|	|		(label: 0) 
 		|		|	|	|		|	|		|	(label: 0) 
 		|		|	|	|		|	|		(label: 0) 
-		|		|	|	|		|	[split_attribute = education; predicate = (Assoc-acdm, 11th, Assoc-voc, Bachelors)] 
+		|		|	|	|		|	[split_attribute = education; predicate = (Assoc-acdm, 11th, Bachelors, Assoc-voc)] 
 		|		|	|	|		|		[split_attribute = age; predicate = 38] 
 		|		|	|	|		|		|	[split_attribute = age; predicate = 36] 
 		|		|	|	|		|		|	|	(label: 0) 
@@ -1111,11 +1111,11 @@
 		|		|	|	|		|				|		(label: 0) 
 		|		|	|	|		|				[split_attribute = fnlwgt; predicate = 27444] 
 		|		|	|	|		|					(label: 1) 
-		|		|	|	|		|					[split_attribute = sex; predicate = (Female)] 
-		|		|	|	|		|						[split_attribute = occupation; predicate = (Protective-serv)] 
-		|		|	|	|		|						|	(label: 0) 
-		|		|	|	|		|						|	(label: 0) 
+		|		|	|	|		|					[split_attribute = sex; predicate = (Male)] 
 		|		|	|	|		|						(label: 0) 
+		|		|	|	|		|						[split_attribute = occupation; predicate = (Protective-serv)] 
+		|		|	|	|		|							(label: 0) 
+		|		|	|	|		|							(label: 0) 
 		|		|	|	|		(label: 1) 
 		|		|	|	[split_attribute = age; predicate = 28] 
 		|		|	|		[split_attribute = fnlwgt; predicate = 23740] 
@@ -1147,11 +1147,11 @@
 		|		|	|		|					|	|	(label: 1) 
 		|		|	|		|					|	(label: 0) 
 		|		|	|		|					(label: 0) 
-		|		|	|		[split_attribute = occupation; predicate = (Craft-repair, Sales, Tech-support)] 
+		|		|	|		[split_attribute = occupation; predicate = (Craft-repair, Tech-support, Sales)] 
 		|		|	|			[split_attribute = education; predicate = (Bachelors)] 
 		|		|	|			|	[split_attribute = hours-per-week; predicate = 42] 
 		|		|	|			|	|	[split_attribute = occupation; predicate = (Sales)] 
-		|		|	|			|	|	|	[split_attribute = sex; predicate = (Female)] 
+		|		|	|			|	|	|	[split_attribute = sex; predicate = (Male)] 
 		|		|	|			|	|	|	|	(label: 0) 
 		|		|	|			|	|	|	|	(label: 0) 
 		|		|	|			|	|	|	[split_attribute = marital-status; predicate = (Married-civ-spouse)] 
@@ -1163,7 +1163,7 @@
 		|		|	|			|	|	|			(label: 0) 
 		|		|	|			|	|	(label: 1) 
 		|		|	|			|	[split_attribute = capital-gain; predicate = 4650] 
-		|		|	|			|		[split_attribute = marital-status; predicate = (Married-civ-spouse, Widowed)] 
+		|		|	|			|		[split_attribute = marital-status; predicate = (Widowed, Married-civ-spouse)] 
 		|		|	|			|		|	[split_attribute = age; predicate = 29] 
 		|		|	|			|		|	|	(label: 1) 
 		|		|	|			|		|	|	[split_attribute = race; predicate = (Other)] 
@@ -1179,7 +1179,7 @@
 		|		|	|			|		|	|				|			(label: 1) 
 		|		|	|			|		|	|				|			(label: 0) 
 		|		|	|			|		|	|				(label: 1) 
-		|		|	|			|		|	[split_attribute = education; predicate = (Some-college, 9th, Assoc-voc)] 
+		|		|	|			|		|	[split_attribute = education; predicate = (Some-college, Assoc-voc, 9th)] 
 		|		|	|			|		|		[split_attribute = age; predicate = 50] 
 		|		|	|			|		|		|	[split_attribute = occupation; predicate = (Craft-repair)] 
 		|		|	|			|		|		|	|	[split_attribute = fnlwgt; predicate = 54932] 
@@ -1188,11 +1188,11 @@
 		|		|	|			|		|		|	|	|		(label: 0) 
 		|		|	|			|		|		|	|	|		[split_attribute = fnlwgt; predicate = 125461] 
 		|		|	|			|		|		|	|	|			(label: 1) 
-		|		|	|			|		|		|	|	|			[split_attribute = relationship; predicate = (Not-in-family, Other-relative)] 
-		|		|	|			|		|		|	|	|				[split_attribute = fnlwgt; predicate = 177675] 
-		|		|	|			|		|		|	|	|				|	(label: 0) 
-		|		|	|			|		|		|	|	|				|	(label: 0) 
+		|		|	|			|		|		|	|	|			[split_attribute = relationship; predicate = (Unmarried, Own-child)] 
 		|		|	|			|		|		|	|	|				(label: 0) 
+		|		|	|			|		|		|	|	|				[split_attribute = fnlwgt; predicate = 177675] 
+		|		|	|			|		|		|	|	|					(label: 0) 
+		|		|	|			|		|		|	|	|					(label: 0) 
 		|		|	|			|		|		|	|	[split_attribute = hours-per-week; predicate = 42] 
 		|		|	|			|		|		|	|		[split_attribute = relationship; predicate = (Not-in-family)] 
 		|		|	|			|		|		|	|		|	[split_attribute = fnlwgt; predicate = 203761] 
@@ -1223,29 +1223,29 @@
 		|		|	|			|		(label: 0) 
 		|		|	|			[split_attribute = marital-status; predicate = (Married-civ-spouse)] 
 		|		|	|				(label: 0) 
-		|		|	|				[split_attribute = education; predicate = (9th, Bachelors)] 
+		|		|	|				[split_attribute = education; predicate = (Bachelors, 9th)] 
 		|		|	|					[split_attribute = age; predicate = 43] 
 		|		|	|					|	[split_attribute = marital-status; predicate = (Widowed)] 
 		|		|	|					|	|	(label: 0) 
 		|		|	|					|	|	(label: 0) 
 		|		|	|					|	[split_attribute = capital-gain; predicate = 2174] 
-		|		|	|					|		[split_attribute = sex; predicate = (Female)] 
-		|		|	|					|		|	[split_attribute = marital-status; predicate = (Never-married)] 
-		|		|	|					|		|	|	(label: 0) 
-		|		|	|					|		|	|	(label: 0) 
+		|		|	|					|		[split_attribute = sex; predicate = (Male)] 
 		|		|	|					|		|	(label: 0) 
+		|		|	|					|		|	[split_attribute = marital-status; predicate = (Never-married)] 
+		|		|	|					|		|		(label: 0) 
+		|		|	|					|		|		(label: 0) 
 		|		|	|					|		(label: 1) 
 		|		|	|					[split_attribute = hours-per-week; predicate = 40] 
 		|		|	|						[split_attribute = fnlwgt; predicate = 20296] 
 		|		|	|						|	(label: 0) 
 		|		|	|						|	[split_attribute = workclass; predicate = (Federal-gov)] 
-		|		|	|						|		[split_attribute = education; predicate = (Some-college, Assoc-voc)] 
+		|		|	|						|		[split_attribute = education; predicate = (Assoc-voc, Some-college)] 
 		|		|	|						|		|	(label: 0) 
 		|		|	|						|		|	(label: 0) 
 		|		|	|						|		[split_attribute = race; predicate = (White, Asian-Pac-Islander)] 
 		|		|	|						|			[split_attribute = capital-gain; predicate = 4650] 
 		|		|	|						|			|	[split_attribute = occupation; predicate = (Transport-moving)] 
-		|		|	|						|			|	|	[split_attribute = education; predicate = (Some-college, 10th)] 
+		|		|	|						|			|	|	[split_attribute = education; predicate = (10th, Some-college)] 
 		|		|	|						|			|	|	|	(label: 0) 
 		|		|	|						|			|	|	|	[split_attribute = age; predicate = 52] 
 		|		|	|						|			|	|	|		(label: 0) 
@@ -1313,50 +1313,50 @@
 		|		|		|	|	|		(label: 0) 
 		|		|		|	|	|		(label: 0) 
 		|		|		|	|	(label: 0) 
-		|		|		|	[split_attribute = occupation; predicate = (Farming-fishing, Craft-repair, Adm-clerical, Transport-moving, Prof-specialty, Priv-house-serv)] 
-		|		|		|		[split_attribute = marital-status; predicate = (Widowed)] 
-		|		|		|		|	(label: 1) 
-		|		|		|		|	[split_attribute = age; predicate = 50] 
-		|		|		|		|		[split_attribute = sex; predicate = (Female)] 
-		|		|		|		|		|	[split_attribute = fnlwgt; predicate = 179641] 
-		|		|		|		|		|	|	(label: 0) 
-		|		|		|		|		|	|	(label: 0) 
-		|		|		|		|		|	[split_attribute = workclass; predicate = (Federal-gov, Private)] 
-		|		|		|		|		|		(label: 0) 
-		|		|		|		|		|		(label: 0) 
-		|		|		|		|		(label: 0) 
+		|		|		|	[split_attribute = occupation; predicate = (Exec-managerial, Other-service, Handlers-cleaners, Tech-support, Sales, Protective-serv)] 
 		|		|		|		[split_attribute = age; predicate = 41] 
-		|		|		|			[split_attribute = fnlwgt; predicate = 509462] 
-		|		|		|			|	[split_attribute = marital-status; predicate = (Divorced, Separated)] 
-		|		|		|			|	|	(label: 0) 
-		|		|		|			|	|	[split_attribute = hours-per-week; predicate = 48] 
-		|		|		|			|	|		(label: 0) 
-		|		|		|			|	|		[split_attribute = fnlwgt; predicate = 295010] 
-		|		|		|			|	|			[split_attribute = fnlwgt; predicate = 269300] 
-		|		|		|			|	|			|	[split_attribute = workclass; predicate = (Self-emp-inc, Private)] 
-		|		|		|			|	|			|	|	(label: 0) 
-		|		|		|			|	|			|	|	(label: 0) 
-		|		|		|			|	|			|	(label: 1) 
-		|		|		|			|	|			(label: 0) 
-		|		|		|			|	(label: 1) 
-		|		|		|			[split_attribute = workclass; predicate = (Self-emp-not-inc, State-gov)] 
+		|		|		|		|	[split_attribute = fnlwgt; predicate = 509462] 
+		|		|		|		|	|	[split_attribute = marital-status; predicate = (Divorced, Separated)] 
+		|		|		|		|	|	|	(label: 0) 
+		|		|		|		|	|	|	[split_attribute = hours-per-week; predicate = 48] 
+		|		|		|		|	|	|		(label: 0) 
+		|		|		|		|	|	|		[split_attribute = fnlwgt; predicate = 295010] 
+		|		|		|		|	|	|			[split_attribute = fnlwgt; predicate = 269300] 
+		|		|		|		|	|	|			|	[split_attribute = workclass; predicate = (Self-emp-inc, Private)] 
+		|		|		|		|	|	|			|	|	(label: 0) 
+		|		|		|		|	|	|			|	|	(label: 0) 
+		|		|		|		|	|	|			|	(label: 1) 
+		|		|		|		|	|	|			(label: 0) 
+		|		|		|		|	|	(label: 1) 
+		|		|		|		|	[split_attribute = workclass; predicate = (State-gov, Self-emp-not-inc)] 
+		|		|		|		|		(label: 0) 
+		|		|		|		|		[split_attribute = occupation; predicate = (Tech-support, Other-service, Sales)] 
+		|		|		|		|			(label: 0) 
+		|		|		|		|			(label: 1) 
+		|		|		|		[split_attribute = marital-status; predicate = (Widowed)] 
+		|		|		|			(label: 1) 
+		|		|		|			[split_attribute = age; predicate = 50] 
+		|		|		|				[split_attribute = sex; predicate = (Male)] 
+		|		|		|				|	[split_attribute = workclass; predicate = (Private, Federal-gov)] 
+		|		|		|				|	|	(label: 0) 
+		|		|		|				|	|	(label: 0) 
+		|		|		|				|	[split_attribute = fnlwgt; predicate = 179641] 
+		|		|		|				|		(label: 0) 
+		|		|		|				|		(label: 0) 
 		|		|		|				(label: 0) 
-		|		|		|				[split_attribute = occupation; predicate = (Exec-managerial, Handlers-cleaners, Protective-serv)] 
-		|		|		|					(label: 1) 
-		|		|		|					(label: 0) 
 		|		|		[split_attribute = age; predicate = 38] 
 		|		|			[split_attribute = marital-status; predicate = (Married-civ-spouse)] 
 		|		|			|	(label: 0) 
-		|		|			|	[split_attribute = workclass; predicate = (State-gov, Private)] 
-		|		|			|		[split_attribute = education; predicate = (Assoc-acdm, 12th)] 
-		|		|			|		|	[split_attribute = occupation; predicate = (Craft-repair, Other-service, Exec-managerial, Prof-specialty)] 
+		|		|			|	[split_attribute = workclass; predicate = (Private, State-gov)] 
+		|		|			|		[split_attribute = education; predicate = (12th, Assoc-acdm)] 
+		|		|			|		|	[split_attribute = occupation; predicate = (Other-service, Exec-managerial, Craft-repair, Prof-specialty)] 
 		|		|			|		|	|	(label: 0) 
 		|		|			|		|	|	(label: 0) 
-		|		|			|		|	[split_attribute = occupation; predicate = (Other-service, Sales, Transport-moving, Exec-managerial, Prof-specialty)] 
+		|		|			|		|	[split_attribute = occupation; predicate = (Exec-managerial, Other-service, Transport-moving, Sales, Prof-specialty)] 
 		|		|			|		|		[split_attribute = age; predicate = 29] 
 		|		|			|		|		|	[split_attribute = education; predicate = (7th-8th)] 
 		|		|			|		|		|	|	(label: 0) 
-		|		|			|		|		|	|	[split_attribute = marital-status; predicate = (Never-married, Married-spouse-absent)] 
+		|		|			|		|		|	|	[split_attribute = marital-status; predicate = (Married-spouse-absent, Never-married)] 
 		|		|			|		|		|	|		[split_attribute = age; predicate = 26] 
 		|		|			|		|		|	|		|	(label: 0) 
 		|		|			|		|		|	|		|	[split_attribute = age; predicate = 27] 
@@ -1378,7 +1378,7 @@
 		|		|			|		|		|		|					|	(label: 0) 
 		|		|			|		|		|		|					(label: 0) 
 		|		|			|		|		|		(label: 1) 
-		|		|			|		|		[split_attribute = race; predicate = (Asian-Pac-Islander, Amer-Indian-Eskimo)] 
+		|		|			|		|		[split_attribute = race; predicate = (Amer-Indian-Eskimo, Asian-Pac-Islander)] 
 		|		|			|		|			(label: 0) 
 		|		|			|		|			[split_attribute = fnlwgt; predicate = 511289] 
 		|		|			|		|				[split_attribute = occupation; predicate = (Craft-repair)] 
@@ -1387,7 +1387,7 @@
 		|		|			|		|				|	|	(label: 0) 
 		|		|			|		|				|	(label: 0) 
 		|		|			|		|				(label: 0) 
-		|		|			|		[split_attribute = occupation; predicate = (Craft-repair, Exec-managerial, Protective-serv)] 
+		|		|			|		[split_attribute = occupation; predicate = (Exec-managerial, Craft-repair, Protective-serv)] 
 		|		|			|			[split_attribute = hours-per-week; predicate = 56] 
 		|		|			|			|	(label: 0) 
 		|		|			|			|	(label: 0) 
@@ -1396,23 +1396,23 @@
 		|		|			|				[split_attribute = age; predicate = 34] 
 		|		|			|					(label: 0) 
 		|		|			|					(label: 0) 
-		|		|			[split_attribute = education; predicate = (Some-college, 12th, Assoc-voc)] 
-		|		|				[split_attribute = sex; predicate = (Female)] 
-		|		|				|	[split_attribute = fnlwgt; predicate = 343609] 
-		|		|				|	|	[split_attribute = fnlwgt; predicate = 126076] 
-		|		|				|	|	|	(label: 0) 
-		|		|				|	|	|	[split_attribute = fnlwgt; predicate = 205100] 
-		|		|				|	|	|		(label: 0) 
-		|		|				|	|	|		(label: 0) 
-		|		|				|	|	(label: 0) 
+		|		|			[split_attribute = education; predicate = (12th, Some-college, Assoc-voc)] 
+		|		|				[split_attribute = sex; predicate = (Male)] 
 		|		|				|	[split_attribute = marital-status; predicate = (Married-spouse-absent, Never-married)] 
+		|		|				|	|	(label: 0) 
+		|		|				|	|	[split_attribute = occupation; predicate = (Exec-managerial, Craft-repair, Adm-clerical, Handlers-cleaners, Transport-moving, Prof-specialty)] 
+		|		|				|	|		[split_attribute = workclass; predicate = (Self-emp-inc, Private, Self-emp-not-inc)] 
+		|		|				|	|		|	(label: 0) 
+		|		|				|	|		|	(label: 1) 
+		|		|				|	|		(label: 0) 
+		|		|				|	[split_attribute = fnlwgt; predicate = 343609] 
+		|		|				|		[split_attribute = fnlwgt; predicate = 126076] 
+		|		|				|		|	(label: 0) 
+		|		|				|		|	[split_attribute = fnlwgt; predicate = 205100] 
+		|		|				|		|		(label: 0) 
+		|		|				|		|		(label: 0) 
 		|		|				|		(label: 0) 
-		|		|				|		[split_attribute = occupation; predicate = (Farming-fishing, Other-service, Sales, Machine-op-inspct, Tech-support, Protective-serv)] 
-		|		|				|			(label: 0) 
-		|		|				|			[split_attribute = workclass; predicate = (Self-emp-inc, Self-emp-not-inc, Private)] 
-		|		|				|				(label: 0) 
-		|		|				|				(label: 1) 
-		|		|				[split_attribute = occupation; predicate = (Farming-fishing, Other-service, Adm-clerical, Armed-Forces, Machine-op-inspct, Handlers-cleaners, Priv-house-serv)] 
+		|		|				[split_attribute = occupation; predicate = (Other-service, Farming-fishing, Armed-Forces, Adm-clerical, Handlers-cleaners, Machine-op-inspct, Priv-house-serv)] 
 		|		|					[split_attribute = workclass; predicate = (Self-emp-inc, State-gov)] 
 		|		|					|	(label: 0) 
 		|		|					|	[split_attribute = education; predicate = (11th)] 
@@ -1434,10 +1434,10 @@
 		|		|						|			|	|		(label: 0) 
 		|		|						|			|	(label: 0) 
 		|		|						|			(label: 0) 
-		|		|						[split_attribute = relationship; predicate = (Not-in-family, Other-relative)] 
-		|		|							(label: 0) 
+		|		|						[split_attribute = relationship; predicate = (Unmarried, Own-child)] 
 		|		|							(label: 1) 
-		|		[split_attribute = education; predicate = (HS-grad, 1st-4th, 5th-6th, 12th, 7th-8th)] 
+		|		|							(label: 0) 
+		|		[split_attribute = education; predicate = (7th-8th, 5th-6th, 12th, HS-grad, 1st-4th)] 
 		|			(label: 0) 
 		|			(label: 1) 
 		[split_attribute = age; predicate = 19] 
