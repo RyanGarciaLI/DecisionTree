@@ -1,0 +1,37 @@
+1.How to read the decision tree
+
+Take the following decision tree as an example:
+
+[split_attribute = A; predicate = P] 						-----------1 internal node
+	(label: 1) 								-----------2 leaf node
+	[split_attribute = age; predicate = 54]					-----------3 internal node
+		[split_attribute = age; predicate = 45] 			-----------4 internal node
+		|	[split_attribute = hours-per-week; predicate = 50] 	-----------5 internal node
+		|	|	(label: 1)					-----------6 leaf node
+		|	|	(label: 1) 					-----------7 leaf node
+		|	(label: 0) 						-----------8 leaf node
+		(label: 1) 							-----------9 leaf node
+
+
+Nodes of the same indent are in the same depth/level, e.g. nodes 6 and 7 are of the same depth.
+Nodes connected with '|' are siblings, e.g. nodes 4 and 9 are siblings.
+For sibling nodes i and j(i < j), their parent node is node i-1, node i is the left child, and node j is the right child of node i-1 respectively, e.g. node 6 is the left child of node 5, and node 7 is the right child of node 5.
+Given an internal node u carrying a predicate P on a nominal attribute A, let v1 and v2 be the left and right child nodes of u, respectively. For any instance x belongs to S(u), if x[A] belongs to P, proceed to the left child, proceed to the right child otherwise.
+Given an internal node u carrying a predicate P on an ordinal attribute B, let v1 and v2 be the left and right child nodes of u, respectively. For any instance x belongs to S(u), if x[B] is less than P, proceed to the left child, proceed to the right child otherwise.
+
+2.How to read the predicted_result.txt report
+
+The first row shows the empirical error for this test, which is (number of wrong prediction)/(size of test data set). 
+
+Each row is a record of evaluation set, containing all the attributes and its label. And it shows whether this record is classified successfully or not in the end of the row.
+
+Take the two rows as examples:
+
+[25, 'Private', 226802, '11th', 7, 'Never-married', 'Machine-op-inspct', 'Own-child', 'Black', 'Male', 0, 0, 40, '<=50K']  Correct Predicted!
+
+[44, 'Private', 83891, 'Bachelors', 13, 'Divorced', 'Adm-clerical', 'Own-child', 'Asian-Pac-Islander', 'Male', 5455, 0, 40, '<=50K']  Wrong Predicted!
+
+After building the decision tree from the training set (adult.data), the predicted results of the evaluation set (adult.test) going through the decision tree are compared with the original label of it. Thus, if the label comparison of each record is different where the predicted result is '1' or '0' and the original label is '0' or '1', the last comment in each record will say 'Wrong Predicted!'. Otherwise, it will say 'Correct Predicted!' 
+
+
+
